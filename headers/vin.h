@@ -16,11 +16,11 @@ public:
 	/// \todo decode manufacturer's VIN
 
 	std::string us		();
-	std::string canada	();
+//	std::string canada	();
 	std::string germany	();
-	std::string japan	();
+//	std::string japan	();
 	std::string mexico	();
-	std::string southKorea	();
+//	std::string southKorea	();
 private:
 	std::string m_vin;
 };

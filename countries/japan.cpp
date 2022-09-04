@@ -1,5 +1,6 @@
 #include "../vin.h"
 
 std::string Vin::japan () {
-	return "Japan\n";
+	std::string << "Japan\n";
+	return "";
 }
