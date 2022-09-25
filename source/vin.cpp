@@ -1,6 +1,6 @@
 #include "vin.h"
 #include "make.h"
-#include "countries/us_make.h"
+#include "us.h"
 
 Vin::Vin (const std::string &v) :
 	m_vin (v)
@@ -17,16 +17,21 @@ std::string Vin::getCountry ()
 		case '4':
 		case '5':
 			return "US";
+			break;
 		case '2':
 			return "Canada";
+			break;
 		case '3':
-			if (second > 'A' && second < 'X')
+			if (second >= 'A' && second < 'X')
 				return "Mexico";
+			break;
 		case 'K':
 			if (second > 'L' && second < 'R')
 				return "South Korea";
+			break;
 		case 'W':
 			return "Germany";
+			break;
 		case 'J':
 			return "Japan";
 		default:
@@ -46,25 +51,25 @@ std::string Vin::getMake ()
 		case '4':
 		case '5':
 			return us ();
-			make = USMake(m_vin);
+//			make = USMake(m_vin);
 			break;
 //		case '2':
 //			return canada ();
 //			break;
 		case '3':
-			if (second >= 'A' && second <= 'X')
-				return mexico ();
+//			if (second >= 'A' && second <= 'X')
+//				return mexico ();
 			break;
-//		case 'K':
+		case 'K':
 //			if (second > 'L' && second < 'R')
 //				return southKorea ();
-//			break;
-//		case 'J':
+			break;
+		case 'J':
 //			return japan ();
-//			break;
-//		case 'W':
+			break;
+		case 'W':
 //			return germany ();
-//			break;
+			break;
 		default:
 			throw std::runtime_error ("Unknown country");
 	}

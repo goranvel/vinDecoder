@@ -2,11 +2,11 @@
 
 #include "vin.h"
 
-int main (void) {
-	std::string vinNo = "3A3";
+int main (int argc, char** argv) {
+	std::string vinNo = argv[1];
 
 	Vin vin (vinNo);
-	// std::cout << vin.getCountry ();
-	std::cout << vin.getMake () << "\n";
+	std::cout << vin.getCountry ();
+	// std::cout << vin.getMake () << "\n";
 	return 0;
 }

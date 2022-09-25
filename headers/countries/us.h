@@ -1,7 +1,7 @@
 #ifndef _USMAKE_H_
 #define _USMAKE_H_
 
-#include "../make.h"
+#include "make.h"
 
 class USMake : public Make {
 public:
