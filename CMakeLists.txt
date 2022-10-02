@@ -3,16 +3,19 @@ cmake_minimum_required(VERSION 3.14)
 project (VinDecoder
 			VERSION 1.0
 			DESCRIPTION "Vin decoder"
-			LANGUAGES CXX)
+			LANGUAGES CXX
+)
 
 set (HEADERS_BASE ${PROJECT_SOURCE_DIR}/headers)
 
-add_subdirectory (source)
+set (CMAKE_RUNTIME_OUTPUT_DIRECTORY ${PROJECT_SOURCE_DIR}/build)
+set (CMAKE_LIBRARY_OUTPUT_DIRECTORY ${PROJECT_SOURCE_DIR}/lib)
 
 add_executable (vinDecoder
-	source/main.cpp
+	vin/main.cpp
 )
 
-target_include_directories(vinDecoder PUBLIC ${HEADERS_BASE})
+add_subdirectory (vin)
+add_subdirectory (countries)
 
-target_link_libraries (vinDecoder PUBLIC vin)
+target_include_directories(vinDecoder PUBLIC ${HEADERS_BASE})

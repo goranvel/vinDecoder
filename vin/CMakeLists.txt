@@ -1,4 +1,3 @@
-add_subdirectory (countries)
 
 add_library (vin SHARED
 	make.cpp
@@ -10,4 +9,4 @@ target_include_directories (vin
 	PRIVATE ${HEADERS_BASE}/countries
 )
 
-target_link_libraries (vin PRIVATE countries)
+target_link_libraries (vinDecoder PUBLIC vin)
